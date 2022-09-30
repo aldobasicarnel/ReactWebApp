@@ -6,7 +6,6 @@ nav {
 }
 
 .title {
-  position: absolute;
   font-size: 26px;
   position: fixed;
   top: 10px;
@@ -15,6 +14,7 @@ nav {
   background-color: transparent;
   text-align: center;
   color: var(--primary-color);
+  text-transform: uppercase;
 }
 .cart {
   color: var(--primary-color);
@@ -32,6 +32,7 @@ button {
   z-index: 999;
   background-color: transparent;
   font-size: 25px;
+  cursor: pointer;
 }
 .open-nav {
   text-align: center;
@@ -46,8 +47,8 @@ button {
   background-color: transparent;
 }
 .navbar-list {
-  transition: opacity 0.3s ease-in;
   opacity: 0;
+  transition: opacity 0.3s ease-in;
   height: 0;
   overflow: hidden;
 }
