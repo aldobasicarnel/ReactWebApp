@@ -1,0 +1,11 @@
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #4c76e2;
+  --main-list-color: #acacac;
+  --secondary-list-color: #333333;
+}
+* {
+  margin: 0;
+  background-color: var(--primary-color);
+  font-family: sans-serif;
+}

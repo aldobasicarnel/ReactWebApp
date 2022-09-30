@@ -1,0 +1,100 @@
+nav {
+  width: 100%;
+  height: 45px;
+  background-color: var(--secondary-color);
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  font-size: 26px;
+  position: fixed;
+  top: 10px;
+  right: 0;
+  left: 0;
+  background-color: transparent;
+  text-align: center;
+  color: var(--primary-color);
+}
+.cart {
+  color: var(--primary-color);
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  text-align: center;
+}
+.cart svg {
+  background-color: transparent;
+}
+
+button {
+  border: none;
+  z-index: 999;
+  background-color: transparent;
+  font-size: 25px;
+}
+.open-nav {
+  text-align: center;
+  color: var(--primary-color);
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+.open-nav svg {
+  border: none;
+  background-color: transparent;
+}
+.navbar-list {
+  transition: opacity 0.3s ease-in;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.navbar-list.active {
+  opacity: 1;
+  height: auto;
+}
+
+.navbar-list.active svg {
+  border: none;
+  background-color: transparent;
+}
+
+.navbar-list svg {
+  color: var(--secondary-color);
+  border: none;
+  background-color: transparent;
+}
+
+.close-nav {
+  color: (--secondary-color);
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.list {
+  margin: 30px 50px;
+  list-style-type: none;
+}
+
+.list li {
+  font-size: 20px;
+  color: var(--secondary-color);
+  border-bottom: 0.5px solid var(--main-list-color);
+}
+
+.list li a {
+  color: var(--secondary-color);
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.list ul {
+  list-style-type: none;
+}
