@@ -3,6 +3,7 @@ nav {
   height: 45px;
   background-color: var(--primary-color);
   position: relative;
+  z-index: 9;
 }
 
 .title {
@@ -41,6 +42,7 @@ button {
   position: absolute;
   top: 10px;
   left: 10px;
+  z-index: 9;
 }
 
 .open-nav svg {
@@ -80,7 +82,7 @@ button {
 }
 
 .list {
-  margin: 30px 50px;
+  margin: 50px 50px;
   list-style-type: none;
 }
 
