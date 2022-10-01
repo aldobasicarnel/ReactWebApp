@@ -102,3 +102,80 @@ button {
 .list ul {
   list-style-type: none;
 }
+
+@media (min-width: 450px) {
+  nav {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+  }
+  nav .title {
+    position: absolute;
+    width: 100px;
+    margin: auto;
+  }
+  .open-nav {
+    display: none;
+  }
+  .open-nav svg {
+    display: none;
+  }
+  .close-nav {
+    display: none;
+  }
+  .close-nav svg {
+    display: none;
+  }
+  nav .navbar-list {
+    opacity: 1;
+    align-items: center;
+    height: 50px;
+    display: flex;
+  }
+  nav .navbar-list.active {
+    display: none;
+  }
+  nav .navbar-list ul {
+    list-style-type: none;
+    color: var(--secondary-list-color);
+  }
+  nav .navbar-list ul li {
+    position: relative;
+    float: left;
+  }
+  nav .navbar-list ul li a {
+    color: var(--secondary-list-color);
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px;
+    display: block;
+  }
+  nav .navbar-list ul li a:hover {
+    background-color: var(--secondary-list-color);
+    color: #fff;
+  }
+  nav .navbar-list ul li ul {
+    position: absolute;
+    width: 100px;
+    left: 0;
+    background-color: var(--secondary-list-color);
+  }
+  .cart {
+    color: var(--secondary-list-color);
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    text-align: center;
+    position: absolute;
+  }
+
+  .cart svg {
+    background-color: transparent;
+  }
+}

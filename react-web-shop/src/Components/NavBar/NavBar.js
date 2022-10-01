@@ -41,17 +41,27 @@ const NavBar = () => {
             <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
           </svg>
         </button>
-        <ul className="list">
-          <li>Home</li>
-          <li>All Products</li>
-          <ul>
-            <li>Helmets</li>
-            <li>Jackets</li>
-            <li>Gloves</li>
-          </ul>
-
-          <li>About</li>
-          <li>Contact</li>
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li className="drop-menu">
+            <a href="#">All Products+</a>
+            <ul>
+              <li>
+                <a href="#">Accesories</a>
+              </li>
+              <li>
+                <a href="#">Sofas</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
         </ul>
       </div>
       <h3 className="title">Patio</h3>
