@@ -54,7 +54,7 @@ const NavBar = () => {
           <li>Contact</li>
         </ul>
       </div>
-      <h3 className="title">Cycle Shop</h3>
+      <h3 className="title">Patio</h3>
       <button className="cart">
         <svg
           xmlns="http://www.w3.org/2000/svg"

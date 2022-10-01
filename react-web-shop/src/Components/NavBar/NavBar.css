@@ -1,27 +1,28 @@
 nav {
   width: 100%;
   height: 45px;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   position: relative;
 }
 
 .title {
   font-size: 26px;
-  position: fixed;
+  position: absolute;
   top: 10px;
   right: 0;
   left: 0;
   background-color: transparent;
   text-align: center;
-  color: var(--primary-color);
+  color: var(--seondary-list-color);
   text-transform: uppercase;
 }
 .cart {
-  color: var(--primary-color);
+  color: var(--secondary-list-color);
   position: fixed;
   top: 10px;
   right: 10px;
   text-align: center;
+  position: absolute;
 }
 .cart svg {
   background-color: transparent;
@@ -36,8 +37,8 @@ button {
 }
 .open-nav {
   text-align: center;
-  color: var(--primary-color);
-  position: fixed;
+  color: var(--secondary-list-color);
+  position: absolute;
   top: 10px;
   left: 10px;
 }
@@ -64,13 +65,13 @@ button {
 }
 
 .navbar-list svg {
-  color: var(--secondary-color);
+  color: var(--main-list-color-color);
   border: none;
   background-color: transparent;
 }
 
 .close-nav {
-  color: (--secondary-color);
+  color: (--secondary-list-color);
   border: none;
   background-color: transparent;
   position: absolute;
@@ -85,12 +86,12 @@ button {
 
 .list li {
   font-size: 20px;
-  color: var(--secondary-color);
+  color: var(--secondary-list-color);
   border-bottom: 0.5px solid var(--main-list-color);
 }
 
 .list li a {
-  color: var(--secondary-color);
+  color: var(--secondary-list-color);
   font-size: 20px;
   text-decoration: none;
   text-transform: uppercase;
