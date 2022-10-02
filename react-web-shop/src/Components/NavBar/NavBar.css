@@ -1,6 +1,6 @@
 nav {
   width: 100%;
-  height: 45px;
+  height: 55px;
   background-color: var(--primary-color);
   position: relative;
   z-index: 9;
@@ -51,7 +51,7 @@ button {
 }
 .navbar-list {
   opacity: 0;
-  transition: opacity 0.3s ease-in;
+  transition: opacity 0.4s ease-in;
   height: 0;
   overflow: hidden;
 }
@@ -81,31 +81,27 @@ button {
   left: 10px;
 }
 
-.list {
+nav .navbar-list ul {
   margin: 50px 50px;
   list-style-type: none;
 }
 
-.list li {
+nav .navbar-list ul li {
   font-size: 20px;
   color: var(--secondary-list-color);
   border-bottom: 0.5px solid var(--main-list-color);
 }
 
-.list li a {
+nav .navbar-list ul li a {
   color: var(--secondary-list-color);
   font-size: 20px;
   text-decoration: none;
   text-transform: uppercase;
 }
 
-.list ul {
-  list-style-type: none;
-}
-
 @media (min-width: 450px) {
   nav {
-    position: fixed;
+    position: relative;
     display: flex;
     top: 0;
     left: 0;
@@ -146,7 +142,7 @@ button {
     color: var(--secondary-list-color);
   }
   nav .navbar-list ul li {
-    position: relative;
+    display: inline;
     float: left;
   }
   nav .navbar-list ul li a {
@@ -165,6 +161,34 @@ button {
     width: 100px;
     left: 0;
     background-color: var(--secondary-list-color);
+  }
+  nav .navbar-list .drop-menu {
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 55px;
+    background-color: var(--secondary-list-color);
+    min-width: 160px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+  nav .navbar-list .drop-menu a {
+    color: black;
+    padding: 15px 20px;
+    text-decoration: none;
+    opacity: 1;
+    height: auto;
+  }
+  nav .navbar-list .drop-menu a:hover {
+    background-color: var(--secondary-color);
+  }
+
+  .drop-btn:hover .drop-menu,
+  .drop-btn:active .drop-menu {
+    opacity: 1;
+    height: auto;
   }
   .cart {
     color: var(--secondary-list-color);

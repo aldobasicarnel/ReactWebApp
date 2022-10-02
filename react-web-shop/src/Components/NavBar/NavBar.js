@@ -45,16 +45,13 @@ const NavBar = () => {
           <li>
             <a href="#">Home</a>
           </li>
-          <li className="drop-menu">
+          <li className="drop-btn">
             <a href="#">All Products+</a>
-            <ul>
-              <li>
-                <a href="#">Accesories</a>
-              </li>
-              <li>
-                <a href="#">Sofas</a>
-              </li>
-            </ul>
+
+            <div className="drop-menu">
+              <a href="#">Accesories</a>
+              <a href="#">Sofas</a>
+            </div>
           </li>
           <li>
             <a href="#">About</a>
