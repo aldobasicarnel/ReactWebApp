@@ -1,14 +1,24 @@
 import React, { useState } from "react";
 import "./NavBar.css";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [showPhoneList, setShowPhoneList] = useState(true);
 
   const showMenuHandler = () => {
     setShowMenu(!showMenu);
   };
   const closeMenuHandler = () => {
     setShowMenu(false);
+  };
+
+  const listShowHandler = () => {
+    if (showPhoneList) {
+      setShowPhoneList(false);
+    } else {
+      setShowPhoneList(true);
+    }
   };
 
   return (
@@ -43,21 +53,33 @@ const NavBar = () => {
         </button>
         <ul>
           <li>
-            <a href="#">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li className="drop-btn">
-            <a href="#">All Products+</a>
-
-            <div className="drop-menu">
-              <a href="#">Accesories</a>
-              <a href="#">Sofas</a>
+            <Link to="/shop">All Products</Link>
+            <button
+              className={`phone-btn ${!showPhoneList ? "active" : ""}`}
+              onClick={listShowHandler}
+            >
+              +
+            </button>
+            <div className={`drop-menu ${!showPhoneList ? "active" : ""}`}>
+              <Link className="link" to="#">
+                TV
+              </Link>
+              <Link className="link" to="#">
+                Sofas
+              </Link>
+              <Link className="link" to="/">
+                Desks
+              </Link>
             </div>
           </li>
           <li>
-            <a href="#">About</a>
+            <Link to="/">About</Link>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <Link to="/">Contact</Link>
           </li>
         </ul>
       </div>

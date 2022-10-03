@@ -5,6 +5,7 @@ nav {
   box-shadow: 2px 2px 2px solid rgba(0, 0, 0, 0.4);
   position: relative;
   z-index: 9;
+  justify-content: space-between;
 }
 
 .title {
@@ -109,12 +110,22 @@ nav .navbar-list.active {
   transition: opacity 0.3s ease-in;
   z-index: 1;
 }
-.navbar-list .drop-btn a:hover {
+.navbar-list .phone-btn.active {
   background-color: var(--primary-color);
 }
-.navbar-list .drop-btn:hover {
+.navbar-list .drop-menu.active {
   opacity: 1;
+  width: 100%;
   height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.link {
+  display: block;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin: 2px;
+  text-align: center;
 }
 
 @media (min-width: 991px) {
@@ -182,6 +193,11 @@ nav .navbar-list.active {
     background-color: var(--secondary-list-color);
     color: #fff;
   }
+
+  nav .navbar-list ul li a:active {
+    background-color: var(--seconadry-color);
+    color: #fff;
+  }
   nav .navbar-list ul li ul {
     position: absolute;
     width: 100px;
@@ -213,7 +229,7 @@ nav .navbar-list.active {
 
   .drop-btn:hover .drop-menu,
   .drop-btn:focus .drop-menu {
-    width: 204px;
+    width: 180px;
     opacity: 1;
     height: auto;
   }
@@ -228,5 +244,8 @@ nav .navbar-list.active {
 
   .cart svg {
     background-color: transparent;
+  }
+  .phone-btn {
+    display: none;
   }
 }
