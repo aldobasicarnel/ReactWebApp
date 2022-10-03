@@ -1,7 +1,7 @@
-.container {
+.img-container {
   position: relative;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  height: 420px;
+  height: 425px;
   width: 390px;
   overflow: hidden;
 }
@@ -39,6 +39,7 @@ img {
   margin-right: 5px;
   text-align: center;
   border-radius: 50px;
+  background-color: var(--secondary-list-color);
 }
 
 .btn:hover {
@@ -49,9 +50,10 @@ img {
 }
 
 @media (min-width: 450px) {
-  .container {
+  .img-container {
     width: 100%;
-    height: 520px;
+    height: 500px;
+    background-color: var(--primary-color);
     position: relative;
     overflow: hidden;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
@@ -59,6 +61,8 @@ img {
 
   .image-container {
     display: flex;
+    width: 390px;
+    height: 550px;
     transform: translateX(0);
     transition: transform 0.5s ease-in-out;
   }
