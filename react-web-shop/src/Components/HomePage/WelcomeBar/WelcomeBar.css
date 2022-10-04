@@ -9,12 +9,12 @@
   background-color: transparent;
   margin: 20px;
   font-size: 22px;
-  font-family: Robotto, sans-serif;
-  font-weight: 750;
+  font-family: Poppins, sans-serif;
   text-align: center;
 }
 
 .quote {
   background-color: transparent;
   font-size: 18px;
+  opacity: 0.4;
 }

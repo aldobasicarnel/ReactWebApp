@@ -22,7 +22,7 @@
 .description .product-title {
   position: absolute;
   bottom: 20px;
-  left: 0;
+  left: 10px;
   color: var(--secondary-list-color);
 }
 
@@ -38,11 +38,12 @@
 }
 .description .product-btn {
   position: absolute;
-  background-color: var(--secondary-list-color);
+  background-color: var(--primary-color);
   border-radius: 5px;
-  color: #fff;
+  color: var(--secondary-list-color);
   bottom: 12px;
   right: 10px;
+  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.2);
 }
 .description .product-btn:hover {
   background-color: rgba(0, 0, 0, 0.4);

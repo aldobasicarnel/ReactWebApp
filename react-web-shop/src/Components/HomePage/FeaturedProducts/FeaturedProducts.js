@@ -4,7 +4,6 @@ import Products from "./Products";
 const FeaturedProducts = ({ images }) => {
   return (
     <div className="fp-container">
-      <h3>Featured Products</h3>
       {images.map((img) => (
         <Products
           key={img.id}

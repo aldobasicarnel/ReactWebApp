@@ -128,7 +128,7 @@ nav .navbar-list.active {
   text-align: center;
 }
 
-@media (min-width: 991px) {
+@media (min-width: 1334px) {
   nav {
     position: relative;
     display: flex;
