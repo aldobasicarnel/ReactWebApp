@@ -1,0 +1,9 @@
+.shop-title {
+  background-color: rgb(234, 224, 226, 0.3);
+  width: 100%;
+  height: 50px;
+  padding: 1rem 1rem;
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 2rem;
+}

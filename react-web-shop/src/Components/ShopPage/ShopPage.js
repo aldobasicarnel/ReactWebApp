@@ -1,19 +1,16 @@
 import FeaturedProducts from "../HomePage/FeaturedProducts/FeaturedProducts";
-import Footer from "../HomePage/Footer/Footer";
+import ShopTitle from "../ShopTitle/ShopTItle";
 import "./ShopPage.css";
 import Sorting from "./SortingElements/Sorting";
 
 const ShopPage = ({ images }) => {
   return (
-    <>
-      <div className="shop-title">
-        <h1>Home/Shop</h1>
-      </div>
+    <div>
+      <ShopTitle title={`Shop`} />
       <Sorting />
-      <div className="products">
-        <FeaturedProducts images={images} />
-      </div>
-    </>
+
+      <FeaturedProducts images={images} />
+    </div>
   );
 };
 

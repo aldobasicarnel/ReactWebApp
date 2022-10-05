@@ -6,7 +6,7 @@
   overflow: hidden;
   position: relative;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-  margin: 10px auto;
+  margin: 1rem auto;
   border-radius: 3px;
 }
 .product-container .image {
