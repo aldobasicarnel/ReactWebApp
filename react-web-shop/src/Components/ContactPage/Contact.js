@@ -1,7 +1,14 @@
+import ShopTitle from "../ShopTitle/ShopTItle";
+import ContactForm from "./ContactForm/ContactForm";
+
 const ContactPage = () => {
   return (
     <div>
-      <h3>Contact</h3>
+      <ShopTitle title={`Contact`} />
+      <div>
+        <h3>Contact</h3>
+        <ContactForm />
+      </div>
     </div>
   );
 };

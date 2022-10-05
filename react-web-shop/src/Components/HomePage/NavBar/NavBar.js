@@ -64,13 +64,13 @@ const NavBar = () => {
               +
             </button>
             <div className={`drop-menu ${!showPhoneList ? "active" : ""}`}>
-              <Link className="link" to="#">
+              <Link className="link" to="/shop">
                 TV
               </Link>
-              <Link className="link" to="#">
+              <Link className="link" to="/shop">
                 Sofas
               </Link>
-              <Link className="link" to="/">
+              <Link className="link" to="/shop">
                 Desks
               </Link>
             </div>
@@ -79,7 +79,7 @@ const NavBar = () => {
             <Link to="/about-us">About</Link>
           </li>
           <li>
-            <Link to="/">Contact</Link>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
       </div>

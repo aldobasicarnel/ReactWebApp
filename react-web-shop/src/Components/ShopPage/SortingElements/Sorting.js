@@ -14,7 +14,7 @@ const Sorting = () => {
   return (
     <div className="sort">
       <div className="main">
-        <button>Sorting by</button>
+        <button>Sort By</button>
       </div>
     </div>
   );
