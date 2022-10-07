@@ -20,7 +20,7 @@ const images = [
 function App(props) {
   return (
     <div className="app">
-      <NavBar />
+      <NavBar onBlur={props.onBlur} />
       <main>
         <Route path="/" exact>
           <HomePage images={images} />

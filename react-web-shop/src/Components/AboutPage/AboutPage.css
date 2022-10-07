@@ -26,7 +26,7 @@
   .image-content {
     margin-top: 2rem;
     margin-bottom: 3rem;
-    width: 60%;
+    width: 50%;
     height: 400px;
   }
   .image-content img {
@@ -39,7 +39,8 @@
     background-color: rgb(234, 224, 226, 0.3);
     padding: 5rem;
     margin-bottom: 3rem;
-    width: 40%;
+    width: 50%;
+    height: 400px;
   }
   .content {
     font-size: 18px;
