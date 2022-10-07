@@ -12,10 +12,8 @@ const Sorting = () => {
   };*/
 
   return (
-    <div className="sort">
-      <div className="main">
-        <button>Sort By</button>
-      </div>
+    <div className="main">
+      <button>Sort By</button>
     </div>
   );
 };

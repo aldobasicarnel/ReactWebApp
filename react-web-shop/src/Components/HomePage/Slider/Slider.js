@@ -19,20 +19,22 @@ const Slider = ({ images }) => {
     setStepTwo(false);
   };
   return (
-    <div className="img-container">
-      <div
-        className={`image-container ${slideIndex ? "active" : ""} ${
-          stepTwo ? "increase" : ""
-        }`}
-      >
-        {images.map((img) => (
-          <img key={img.id} src={img.img} alt="" />
-        ))}
-      </div>
-      <div className="button-container">
-        <button className="btn" onClick={prevSlide}></button>
-        <button className="btn" onClick={nextSlide}></button>
-        <button className="btn" onClick={stepHandler}></button>
+    <div className="b-container">
+      <div className="img-container">
+        <div
+          className={`image-container ${slideIndex ? "active" : ""} ${
+            stepTwo ? "increase" : ""
+          }`}
+        >
+          {images.map((img) => (
+            <img key={img.id} src={img.img} alt="" />
+          ))}
+        </div>
+        <div className="button-container">
+          <button className="btn" onClick={prevSlide}></button>
+          <button className="btn" onClick={nextSlide}></button>
+          <button className="btn" onClick={stepHandler}></button>
+        </div>
       </div>
     </div>
   );

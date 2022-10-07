@@ -5,7 +5,8 @@ const ContactForm = () => {
   const [enteredName, setEnteredName] = useState("");
   const [enteredEmail, setEnteredEmail] = useState("");
   const [enteredMessage, setEnteredMessage] = useState("");
-  const [isValid, setIsValid] = useState(true);
+  const [isValid, setIsValid] = useState(false);
+  const [isTouched, setIsTouched] = useState(false);
 
   const nameInputChangeHandler = (event) => {
     setEnteredName(event.target.value);
@@ -19,8 +20,22 @@ const ContactForm = () => {
     setEnteredMessage(event.target.value);
   };
 
+  const inputBlurHandler = () => {
+    setIsTouched(true);
+    if (
+      enteredName.trim() === "" &&
+      enteredEmail.trim() === "" &&
+      enteredMessage.trim() === ""
+    ) {
+      setIsValid(false);
+      return;
+    }
+  };
+
   const formSubmissionHandler = (event) => {
     event.preventDefault();
+
+    setIsTouched(true);
 
     if (
       enteredName.trim() === "" &&
@@ -42,7 +57,9 @@ const ContactForm = () => {
     setEnteredMessage("");
   };
 
-  const InputClasses = isValid ? "form-control" : "form-control invalid";
+  const inputIsInvalid = !isValid && isTouched;
+
+  const InputClasses = inputIsInvalid ? "form-control invalid" : "form-control";
 
   return (
     <form onSubmit={formSubmissionHandler}>
@@ -53,8 +70,9 @@ const ContactForm = () => {
           id="name"
           valiue={enteredName}
           onChange={nameInputChangeHandler}
+          onBlur={inputBlurHandler}
         />
-        {!isValid && <p>Name must be not empty</p>}
+        {inputIsInvalid && <p className="error-text">Name must be not empty</p>}
       </div>
       <div className={InputClasses}>
         <label>E-Mail</label>
@@ -63,17 +81,20 @@ const ContactForm = () => {
           id="email"
           value={enteredEmail}
           onChange={emailInputChangeHandler}
+          onBlur={inputBlurHandler}
         />
-        {!isValid && <p>Email must be not empty</p>}
+        {inputIsInvalid && (
+          <p className="error-text">Email must be not empty</p>
+        )}
       </div>
       <div className={InputClasses}>
         <label>Message</label>
         <textarea
           value={enteredMessage}
           onChange={messageInputChangeHandler}
+          onBlur={inputBlurHandler}
           id="message"
         />
-        {!isValid && <p>Message must be not empty</p>}
       </div>
       <div className="form-actions">
         <button>Submit</button>
