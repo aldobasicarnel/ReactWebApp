@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [showPhoneList, setShowPhoneList] = useState(true);
+  const location = useLocation();
 
   const showMenuHandler = () => {
     setShowMenu(!showMenu);
@@ -20,6 +22,10 @@ const NavBar = () => {
       setShowPhoneList(true);
     }
   };
+
+  useEffect(() => {
+    closeMenuHandler();
+  }, [location]);
 
   return (
     <nav>
