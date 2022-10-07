@@ -37,6 +37,9 @@ button {
   font-size: 25px;
   cursor: pointer;
 }
+button:focus {
+  outline: none;
+}
 .open-nav {
   text-align: center;
   color: var(--secondary-list-color);
