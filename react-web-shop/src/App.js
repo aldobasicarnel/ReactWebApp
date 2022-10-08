@@ -17,10 +17,10 @@ const images = [
   { id: 3, img: Lamp, title: "Lamp", price: 50 },
 ];
 
-function App(props) {
+function App() {
   return (
     <div className="app">
-      <NavBar onBlur={props.onBlur} />
+      <NavBar />
       <main>
         <Route path="/" exact>
           <HomePage images={images} />

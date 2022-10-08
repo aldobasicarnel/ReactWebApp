@@ -19,6 +19,7 @@ nav {
   color: var(--seondary-list-color);
   text-transform: uppercase;
 }
+
 .cart {
   color: var(--secondary-list-color);
   position: absolute;
@@ -130,7 +131,7 @@ nav .navbar-list.active {
   text-align: center;
 }
 
-@media (min-width: 1334px) {
+@media (min-width: 768px) {
   nav {
     position: relative;
     display: flex;
@@ -142,6 +143,7 @@ nav .navbar-list.active {
     justify-content: space-between;
     z-index: 1000;
   }
+
   nav .title {
     position: absolute;
     width: 100px;
