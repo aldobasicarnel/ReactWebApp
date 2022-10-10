@@ -10,6 +10,7 @@ import LaptopBag from "./Components/HomePage/Slider/images/laptop-bag.jpeg";
 import Lamp from "./Components/HomePage/Slider/images/lamp.png";
 import AboutPage from "./Components/AboutPage/AboutPage";
 import Contact from "./Components/ContactPage/Contact";
+import CheckoutPage from "./Components/CheckoutPage/CheckoutPage";
 
 const images = [
   { id: 1, img: WallClock, title: "Wall clock", price: 250 },
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route path="/contact">
           <Contact />
+        </Route>
+        <Route path="/checkout">
+          <CheckoutPage />
         </Route>
       </main>
       <div className="footer-wrap">

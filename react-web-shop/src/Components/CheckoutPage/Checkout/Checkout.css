@@ -1,0 +1,197 @@
+.checkout-title {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+  height: 30px;
+  gap: 9rem;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  margin: auto 2rem;
+  width: 100%;
+}
+.product-info {
+  width: 65%;
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.info-img {
+  width: 100px;
+  min-width: 50px;
+  height: 100px;
+}
+.desc-info {
+  text-align: center;
+}
+.desc-name {
+  margin-left: 10px;
+  margin-right: 100px;
+}
+.delete-btn {
+  height: 30px;
+  width: 30px;
+  margin: 5px;
+  margin-top: 30px;
+}
+.desc-btns {
+  display: inline-block;
+  margin-left: 100px;
+}
+.desc-amount {
+  width: 30px;
+  margin-left: 2px;
+  margin-right: 2px;
+  height: 35px;
+}
+.checkout-info {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  margin-left: 30px;
+}
+.price-info {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  gap: 11.6rem;
+  margin-bottom: 15px;
+}
+.price {
+  display: flex;
+  align-items: center;
+}
+.shipping-info {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  gap: 9.8rem;
+  margin-bottom: 15px;
+}
+.shipping {
+  display: flex;
+  align-items: center;
+}
+.shipping-info a {
+  text-decoration: none;
+  color: black;
+}
+.total-amount {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  gap: 11rem;
+}
+.amount {
+  display: flex;
+  align-items: center;
+}
+.order-btn {
+  margin-top: 20px;
+  width: 100%;
+  background-color: #000;
+  padding: 10px 12px;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .checkout-title {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    height: 30px;
+    gap: 3em;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .flexbox {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    width: 100%;
+  }
+  .product-info {
+    margin: 10px;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .delete-btn {
+    height: 20px;
+    width: 20px;
+    margin-top: 0px;
+    margin-right: 10px;
+  }
+  .info-img {
+    width: 100px;
+    min-width: 50px;
+    height: 130px;
+  }
+  .desc-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .desc-name {
+    flex-direction: row;
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+  .desc-btns {
+    margin: 0 15px;
+  }
+
+  .desc-amount {
+    width: 30px;
+    margin: 1rem;
+    height: 35px;
+  }
+
+  .checkout-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    margin-left: 10px;
+  }
+  .price-info {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+  }
+  .price {
+    display: flex;
+    align-items: center;
+  }
+  .shipping-info {
+    flex-direction: row;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+  }
+  .shipping {
+    display: flex;
+    align-items: center;
+  }
+  .total-amount {
+    flex-direction: row;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .amount {
+    margin: 0;
+    padding: 0;
+    display: inline;
+  }
+  .order-btn {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #000;
+    padding: 5px 8px;
+    color: #fff;
+  }
+}
