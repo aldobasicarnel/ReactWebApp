@@ -5,12 +5,13 @@ import NavBar from "./Components/HomePage/NavBar/NavBar";
 import Footer from "./Components/HomePage/Footer/Footer";
 import { Route } from "react-router-dom";
 
-import WallClock from "./Components/HomePage/Slider/images/wall-clock.jpeg";
-import LaptopBag from "./Components/HomePage/Slider/images/laptop-bag.jpeg";
-import Lamp from "./Components/HomePage/Slider/images/lamp.png";
 import AboutPage from "./Components/AboutPage/AboutPage";
 import Contact from "./Components/ContactPage/Contact";
 import CheckoutPage from "./Components/CheckoutPage/CheckoutPage";
+
+import WallClock from "./Components/HomePage/Slider/images/wall-clock.jpeg";
+import LaptopBag from "./Components/HomePage/Slider/images/laptop-bag.jpeg";
+import Lamp from "./Components/HomePage/Slider/images/lamp.png";
 
 const images = [
   { id: 1, img: WallClock, title: "Wall clock", price: 250 },
