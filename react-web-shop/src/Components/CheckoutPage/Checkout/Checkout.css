@@ -1,24 +1,36 @@
+.flexbox-container {
+  padding: 0;
+  width: 100%;
+  margin: auto;
+}
 .checkout-title {
   display: flex;
   flex-direction: row;
-  margin: 1rem;
   height: 30px;
-  gap: 9rem;
+  gap: 3rem;
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 0;
+  justify-content: space-between;
+  align-items: center;
 }
 .flexbox {
+  padding: 15px;
   display: flex;
-  flex-direction: row;
-  margin: auto 2rem;
+  flex-direction: column;
   width: 100%;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: flex-end;
 }
 .product-info {
-  width: 65%;
+  width: 100%;
   height: 150px;
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  align-items: center;
 }
 .info-img {
   width: 100px;
@@ -37,6 +49,7 @@
   width: 30px;
   margin: 5px;
   margin-top: 30px;
+  z-index: 1;
 }
 .desc-btns {
   display: inline-block;
@@ -49,29 +62,27 @@
   height: 35px;
 }
 .checkout-info {
-  width: 25%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   height: 250px;
-  margin-left: 30px;
+  justify-content: center;
+  align-items: center;
 }
 .price-info {
   display: flex;
-  flex-direction: row;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   gap: 11.6rem;
-  margin-bottom: 15px;
+  flex-direction: row;
 }
 .price {
   display: flex;
   align-items: center;
 }
 .shipping-info {
-  display: flex;
-  flex-direction: row;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
   gap: 9.8rem;
-  margin-bottom: 15px;
 }
 .shipping {
   display: flex;
@@ -82,10 +93,9 @@
   color: black;
 }
 .total-amount {
-  display: flex;
-  flex-direction: row;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  gap: 11rem;
+  display: flex;
+  gap: 10rem;
 }
 .amount {
   display: flex;
@@ -93,9 +103,9 @@
 }
 .order-btn {
   margin-top: 20px;
-  width: 100%;
+  width: 400px;
   background-color: #000;
-  padding: 10px 12px;
+  padding: 5px 8px;
   color: #fff;
 }
 
@@ -103,21 +113,22 @@
   .checkout-title {
     display: flex;
     flex-direction: row;
-    margin: 1rem;
     height: 30px;
-    gap: 3em;
+    gap: 3rem;
     width: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 0;
+    justify-content: flex-start;
+    align-items: center;
   }
 
   .flexbox {
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    margin: 15px;
     width: 100%;
   }
   .product-info {
-    margin: 10px;
     width: 100%;
     height: 150px;
     display: flex;
@@ -129,6 +140,7 @@
     width: 20px;
     margin-top: 0px;
     margin-right: 10px;
+    z-index: 1;
   }
   .info-img {
     width: 100px;
@@ -153,13 +165,16 @@
     margin: 1rem;
     height: 35px;
   }
+  .order-info {
+    width: 100%;
+    margin: auto;
+  }
 
   .checkout-info {
     width: 100%;
     display: flex;
     flex-direction: column;
     height: 250px;
-    margin-left: 10px;
   }
   .price-info {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -188,10 +203,10 @@
     display: inline;
   }
   .order-btn {
-    margin-top: 20px;
     width: 100%;
+    margin: auto;
     background-color: #000;
-    padding: 5px 8px;
+    padding: 5px 5px;
     color: #fff;
   }
 }
