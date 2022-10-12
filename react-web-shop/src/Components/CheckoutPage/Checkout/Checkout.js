@@ -1,7 +1,22 @@
 import "./Checkout.css";
-import img from "../../HomePage/Slider/images/jeans.png";
+import { cartActions } from "../../Store/Cart-Slice";
+import { useSelector, useDispatch } from "react-redux";
 
 const Checkout = () => {
+  const items = useSelector((state) => state.items);
+  const totalAmount = useSelector((state) => state.totalAmount);
+  const dispatch = useDispatch();
+
+  const addProductHandler = () => {};
+
+  const removeProductHandler = (id) => {
+    dispatch(
+      cartActions.removeItemFromCart({
+        id: id,
+      })
+    );
+  };
+
   return (
     <div className="flexbox-container">
       <div className="flexbox">
@@ -12,24 +27,26 @@ const Checkout = () => {
           <h5>Price</h5>
           <h5>Quantity</h5>
         </div>
-        <div className="product-info">
-          <button className="delete-btn">X</button>
-          <img className="info-img" src={img} alt=""></img>
-          <div className="desc-info">
-            <span className="desc-name">Product Name</span>
-            <span className="desc-price">$1100</span>
-            <div className="desc-btns">
-              <button>-</button>
-              <input className="desc-amount" type="number" />
-              <button>+</button>
+        {items.map((item) => (
+          <div key={item.id} className="product-info">
+            <button className="delete-btn">X</button>
+            <img className="info-img" src={item.img} alt=""></img>
+            <div className="desc-info">
+              <span className="desc-name">{item.name}</span>
+              <span className="desc-price">${item.price}</span>
+              <div className="desc-btns">
+                <button onClick={addProductHandler}>-</button>
+                <input className="desc-amount" type="number" />
+                <button>+</button>
+              </div>
             </div>
           </div>
-        </div>
+        ))}
         <div className="checkout-info">
           <div className="order-info">
             <div className="price-info">
               <p className="price">Subtotal:</p>
-              <p className="price">$244</p>
+              <p className="price">$250</p>
             </div>
             <div className="shipping-info">
               <p className="shipping">Shipping:</p>

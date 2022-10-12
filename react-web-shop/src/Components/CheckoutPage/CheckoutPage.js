@@ -1,11 +1,11 @@
 import ShopTitle from "../ShopTitle/ShopTItle";
 import Checkout from "./Checkout/Checkout";
 
-const CheckoutPage = () => {
+const CheckoutPage = ({ images }) => {
   return (
     <div>
       <ShopTitle title={`Checkout`} />
-      <Checkout />
+      <Checkout images={images} />
     </div>
   );
 };
