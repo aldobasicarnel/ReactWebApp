@@ -1,4 +1,5 @@
 import "./Products.css";
+import { useSelector } from "react-redux";
 
 const Products = ({ img, title, price }) => {
   return (
