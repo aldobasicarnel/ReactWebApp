@@ -11,6 +11,7 @@ const FeaturedProducts = ({ images }) => {
           img={item.img}
           title={item.title}
           price={item.price}
+          quantity={item.quantity}
         />
       ))}
     </div>

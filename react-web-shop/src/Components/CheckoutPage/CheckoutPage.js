@@ -1,11 +1,23 @@
 import ShopTitle from "../ShopTitle/ShopTItle";
 import Checkout from "./Checkout/Checkout";
+import { useSelector } from "react-redux";
 
-const CheckoutPage = ({ images }) => {
+const CheckoutPage = () => {
+  const items = useSelector((state) => state.items);
+
   return (
     <div>
       <ShopTitle title={`Checkout`} />
-      <Checkout images={images} />
+      {items.map((item) => (
+        <Checkout
+          item={{
+            id: item.id,
+            title: item.name,
+            price: item.price,
+            qunantity: item.quantity,
+          }}
+        />
+      ))}
     </div>
   );
 };

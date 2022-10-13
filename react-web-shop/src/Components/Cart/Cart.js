@@ -1,15 +1,32 @@
 import "./Cart.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { cartActions } from "../Store/Cart-Slice";
 
-const Cart = () => {
+const Cart = ({ id, title, price }) => {
+  const dispatch = useDispatch();
+
   const [showCartList, setShowCartList] = useState(false);
   const badge = useSelector((state) => state.totalQuantity);
-  const price = useSelector((state) => state.items);
+  const items = useSelector((state) => state.items);
 
   const showCartHandler = () => {
     setShowCartList(!showCartList);
+  };
+
+  const addItemToCart = () => {
+    dispatch(
+      cartActions.addItemToCart({
+        id: id,
+        name: title,
+        price: price,
+      })
+    );
+  };
+
+  const removeItemFromCart = () => {
+    dispatch(cartActions.removeItemFromCart(id));
   };
 
   return (
@@ -30,12 +47,23 @@ const Cart = () => {
       <div className={`dropdown-content ${showCartList ? "show" : ""}`}>
         <span className="cart-pr-title">Cart</span>
         <div className="cart-price">
-          {price.map((item) => (
+          {items.map((item) => (
             <div key={item.id} className="cart-pr-container">
-              <p className="cart-pr-content">{item.name}</p>
-              <span className="cart-pr-content">
-                {item.quantity}x ${item.price}
-              </span>
+              <div className="title-container">
+                <p className="cart-pr-name">{item.name}</p>
+                <span className="cart-pr-price">${item.totalPrice}</span>
+              </div>
+              <div className="cart-actions">
+                <p className="cart-pr-quan">x{item.quantity}</p>
+                <div className="cart-btns">
+                  <button className="cart-btn" onClick={removeItemFromCart}>
+                    -
+                  </button>
+                  <button className="cart-btn" onClick={addItemToCart}>
+                    +
+                  </button>
+                </div>
+              </div>
             </div>
           ))}
         </div>

@@ -2,7 +2,7 @@ import "./Products.css";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../Store/Cart-Slice";
 
-const Products = ({ id, img, title, price }) => {
+const Products = ({ id, img, title, quantity, price }) => {
   const dispatch = useDispatch();
 
   const addToCartHandler = () => {
@@ -12,6 +12,7 @@ const Products = ({ id, img, title, price }) => {
         img: img,
         name: title,
         price: price,
+        quantity: quantity,
       })
     );
   };

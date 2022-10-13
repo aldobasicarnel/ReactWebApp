@@ -14,9 +14,21 @@ import LaptopBag from "./Components/HomePage/Slider/images/laptop-bag.jpeg";
 import Lamp from "./Components/HomePage/Slider/images/lamp.png";
 
 const images = [
-  { id: 1, img: WallClock, title: "Wall clock", price: 250 },
-  { id: 2, img: LaptopBag, title: "Laptop Bag", price: 150 },
-  { id: 3, img: Lamp, title: "Lamp", price: 50 },
+  {
+    id: 1,
+    img: WallClock,
+    title: "Wall clock",
+    price: 250,
+    quantity: 0,
+  },
+  {
+    id: 2,
+    img: LaptopBag,
+    title: "Laptop Bag",
+    price: 150,
+    quantity: 0,
+  },
+  { id: 3, img: Lamp, title: "Lamp", price: 50, quantity: 0 },
 ];
 
 function App() {
@@ -37,7 +49,7 @@ function App() {
           <Contact />
         </Route>
         <Route path="/checkout">
-          <CheckoutPage />
+          <CheckoutPage images={images} />
         </Route>
       </main>
       <div className="footer-wrap">
