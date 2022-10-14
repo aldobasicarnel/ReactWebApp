@@ -1,8 +1,7 @@
 import "./Checkout.css";
 import { useSelector } from "react-redux";
 import CheckoutItem from "./CheckoutItem";
-import { useEffect } from "react";
-import { cartActions } from "../../Store/Cart-Slice";
+import Tag from "../Tag";
 
 const Checkout = (props) => {
   const totalAmount = useSelector((state) => state.items);
@@ -22,6 +21,7 @@ const Checkout = (props) => {
 
   return (
     <div className="flexbox-container">
+      <Tag tag={`1`} />
       <div className="flexbox">
         {" "}
         <div className="checkout-title">

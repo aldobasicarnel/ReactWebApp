@@ -17,8 +17,12 @@ const Cart = ({ id, title, price, quantity }) => {
     setShowCartList(!showCartList);
   };
 
+  const closeCartHandler = () => {
+    setShowCartList(false);
+  };
+
   useEffect(() => {
-    setShowCartList(showCartList);
+    closeCartHandler();
   }, [location]);
 
   return (

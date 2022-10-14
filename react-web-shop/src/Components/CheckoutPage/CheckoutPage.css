@@ -1,0 +1,9 @@
+.checkout-page {
+  margin: 25px;
+}
+
+@media (max-width: 768px) {
+  .checkout-page {
+    margin: 0px;
+  }
+} ;

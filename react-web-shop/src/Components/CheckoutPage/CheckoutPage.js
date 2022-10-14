@@ -1,12 +1,17 @@
 import ShopTitle from "../ShopTitle/ShopTItle";
 import Checkout from "./Checkout/Checkout";
+import CheckoutForm from "./CheckoutForm/CheckoutForm";
+import "./CheckoutPage.css";
 
 const CheckoutPage = () => {
   return (
-    <div>
+    <>
       <ShopTitle title={`Checkout`} />
-      <Checkout />
-    </div>
+      <div className="checkout-page">
+        <Checkout />
+        <CheckoutForm />
+      </div>
+    </>
   );
 };
 
