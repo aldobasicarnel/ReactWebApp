@@ -1,6 +1,7 @@
 import "./Checkout.css";
 import { useSelector } from "react-redux";
 import CheckoutItem from "./CheckoutItem";
+import { Link } from "react-router-dom";
 import Tag from "../Tag";
 
 const Checkout = (props) => {
@@ -59,7 +60,11 @@ const Checkout = (props) => {
             </div>
           </div>
 
-          <button className="order-btn">Proceed to checkout</button>
+          <button className="order-btn">
+            <Link to="" className="link-shiping">
+              Proceed to checkout
+            </Link>
+          </button>
         </div>
       </div>
     </div>

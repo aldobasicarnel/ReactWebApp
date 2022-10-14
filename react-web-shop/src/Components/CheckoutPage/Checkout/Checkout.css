@@ -16,6 +16,11 @@
   justify-content: space-between;
   align-items: center;
 }
+.link-shiping {
+  color: #fff;
+  background-color: transparent;
+  text-decoration: none;
+}
 .flexbox {
   padding: 15px;
   display: flex;
