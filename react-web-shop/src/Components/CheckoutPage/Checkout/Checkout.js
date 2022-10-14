@@ -1,11 +1,20 @@
 import "./Checkout.css";
 import { useSelector } from "react-redux";
 import CheckoutItem from "./CheckoutItem";
+import { useEffect } from "react";
+import { cartActions } from "../../Store/Cart-Slice";
 
 const Checkout = (props) => {
-  const totalAmount = useSelector((state) => state.totalAmount);
-
+  const totalAmount = useSelector((state) => state.items);
   const items = useSelector((state) => state.items);
+
+  let amount;
+
+  amount = totalAmount
+    .filter((item) => {
+      return item.totalPrice;
+    })
+    .reduce((exp, item) => (exp += item.totalPrice), 0);
 
   return (
     <div className="flexbox-container">
@@ -33,7 +42,8 @@ const Checkout = (props) => {
         <div className="checkout-info">
           <div className="order-info">
             <div className="price-info">
-              <p className="price">Subtotal:</p> <p className="price">${}</p>
+              <p className="price">Subtotal:</p>{" "}
+              <p className="price">${amount}</p>
             </div>
             <div className="shipping-info">
               <p className="shipping">Shipping:</p>
