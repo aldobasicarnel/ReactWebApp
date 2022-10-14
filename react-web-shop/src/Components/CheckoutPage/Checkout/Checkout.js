@@ -16,6 +16,10 @@ const Checkout = (props) => {
     })
     .reduce((exp, item) => (exp += item.totalPrice), 0);
 
+  let tax = 0.23;
+  const taxes = amount * tax;
+  const grandTotal = amount + taxes;
+
   return (
     <div className="flexbox-container">
       <div className="flexbox">
@@ -51,7 +55,7 @@ const Checkout = (props) => {
             </div>
             <div className="total-amount">
               <p className="amount">Grand Total:</p>
-              <p className="amount">$265</p>
+              <p className="amount">${grandTotal}</p>
             </div>
           </div>
 
