@@ -1,33 +1,25 @@
 import "./Cart.css";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import CartItem from "./CartItem";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { cartActions } from "../Store/Cart-Slice";
 
-const Cart = ({ id, title, price }) => {
+const Cart = ({ id, title, price, quantity }) => {
   const dispatch = useDispatch();
+
+  const location = useLocation();
 
   const [showCartList, setShowCartList] = useState(false);
   const badge = useSelector((state) => state.totalQuantity);
-  const items = useSelector((state) => state.items);
+  const cartItems = useSelector((state) => state.items);
 
   const showCartHandler = () => {
     setShowCartList(!showCartList);
   };
 
-  const addItemToCart = () => {
-    dispatch(
-      cartActions.addItemToCart({
-        id: id,
-        name: title,
-        price: price,
-      })
-    );
-  };
-
-  const removeItemFromCart = () => {
-    dispatch(cartActions.removeItemFromCart(id));
-  };
+  useEffect(() => {
+    setShowCartList(showCartList);
+  }, [location]);
 
   return (
     <div className="cart">
@@ -47,24 +39,17 @@ const Cart = ({ id, title, price }) => {
       <div className={`dropdown-content ${showCartList ? "show" : ""}`}>
         <span className="cart-pr-title">Cart</span>
         <div className="cart-price">
-          {items.map((item) => (
-            <div key={item.id} className="cart-pr-container">
-              <div className="title-container">
-                <p className="cart-pr-name">{item.name}</p>
-                <span className="cart-pr-price">${item.totalPrice}</span>
-              </div>
-              <div className="cart-actions">
-                <p className="cart-pr-quan">x{item.quantity}</p>
-                <div className="cart-btns">
-                  <button className="cart-btn" onClick={removeItemFromCart}>
-                    -
-                  </button>
-                  <button className="cart-btn" onClick={addItemToCart}>
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
+          {cartItems.map((item) => (
+            <CartItem
+              key={item.id}
+              item={{
+                title: item.name,
+                price: item.price,
+                totalPrice: item.totalPrice,
+                id: item.id,
+                quantity: item.quantity,
+              }}
+            />
           ))}
         </div>
         <button className="checkout-btn">

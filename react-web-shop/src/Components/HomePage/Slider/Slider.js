@@ -1,7 +1,17 @@
 import React, { useState } from "react";
 import "./Slider.css";
 
-const Slider = ({ images }) => {
+import WallClock from "./images/wall-clock.jpeg";
+import LaptopBag from "./images/laptop-bag.jpeg";
+import Lamp from "./images/lamp.png";
+
+const images = [
+  { id: 1, img: WallClock },
+  { id: 2, img: LaptopBag },
+  { id: 3, img: Lamp },
+];
+
+const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(false);
   const [stepTwo, setStepTwo] = useState(false);
 
@@ -26,8 +36,8 @@ const Slider = ({ images }) => {
             stepTwo ? "increase" : ""
           }`}
         >
-          {images.map((img) => (
-            <img key={img.id} src={img.img} alt="" />
+          {images.map((item) => (
+            <img key={item.id} src={item.img} alt="" />
           ))}
         </div>
         <div className="button-container">

@@ -4,13 +4,13 @@ import FeaturedProducts from "./FeaturedProducts/FeaturedProducts";
 
 import "./HomePage.css";
 
-const HomePage = ({ images }) => {
+const HomePage = () => {
   return (
     <div className="home">
-      <Slider images={images} />
+      <Slider />
       <WelcomeBar />
       <h3 className="title-fp">Featured Products</h3>
-      <FeaturedProducts images={images} />
+      <FeaturedProducts />
     </div>
   );
 };

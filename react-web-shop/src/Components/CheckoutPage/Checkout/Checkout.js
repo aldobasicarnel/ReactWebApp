@@ -1,32 +1,11 @@
 import "./Checkout.css";
-import { cartActions } from "../../Store/Cart-Slice";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import CheckoutItem from "./CheckoutItem";
 
 const Checkout = (props) => {
-  const items = useSelector((state) => state.items);
   const totalAmount = useSelector((state) => state.totalAmount);
-  const dispatch = useDispatch();
 
-  const { id, title, price, qunatity } = props.item;
-
-  const addToCartHandler = () => {
-    dispatch(
-      cartActions.addItemToCart({
-        id: id,
-        name: title,
-        price: price,
-        quantity: qunatity,
-      })
-    );
-  };
-
-  const removeItemHandler = () => {
-    dispatch(cartActions.removeItemFromCart(id));
-  };
-
-  const deleteItemHandler = () => {
-    dispatch(cartActions.deleteItemFromCart(id));
-  };
+  const items = useSelector((state) => state.items);
 
   return (
     <div className="flexbox-container">
@@ -39,24 +18,17 @@ const Checkout = (props) => {
           <h5>Quantity</h5>
         </div>
         {items.map((item) => (
-          <div key={item.id} className="product-info">
-            <button className="delete-btn" onClick={deleteItemHandler}>
-              X
-            </button>
-            <img className="info-img" src={item.img} alt=""></img>
-            <div className="desc-info">
-              <span className="desc-name">{item.name}</span>
-              <span className="desc-price">${item.totalPrice}</span>
-              <div className="desc-btns">
-                <button onClick={removeItemHandler}>-</button>
-                <input className="desc-amount" type="number" />
-                <button onClick={addToCartHandler}>+</button>
-              </div>
-              <div className="quantity">
-                <span className="desc-quan">X{item.quantity}</span>
-              </div>
-            </div>
-          </div>
+          <CheckoutItem
+            key={item.id}
+            item={{
+              id: item.id,
+              img: item.img,
+              title: item.name,
+              price: item.price,
+              totalPrice: item.totalPrice,
+              quantity: item.quantity,
+            }}
+          />
         ))}
         <div className="checkout-info">
           <div className="order-info">

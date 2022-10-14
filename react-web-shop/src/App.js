@@ -9,38 +9,16 @@ import AboutPage from "./Components/AboutPage/AboutPage";
 import Contact from "./Components/ContactPage/Contact";
 import CheckoutPage from "./Components/CheckoutPage/CheckoutPage";
 
-import WallClock from "./Components/HomePage/Slider/images/wall-clock.jpeg";
-import LaptopBag from "./Components/HomePage/Slider/images/laptop-bag.jpeg";
-import Lamp from "./Components/HomePage/Slider/images/lamp.png";
-
-const images = [
-  {
-    id: 1,
-    img: WallClock,
-    title: "Wall clock",
-    price: 250,
-    quantity: 0,
-  },
-  {
-    id: 2,
-    img: LaptopBag,
-    title: "Laptop Bag",
-    price: 150,
-    quantity: 0,
-  },
-  { id: 3, img: Lamp, title: "Lamp", price: 50, quantity: 0 },
-];
-
 function App() {
   return (
     <div className="app">
       <NavBar />
       <main>
         <Route path="/" exact>
-          <HomePage images={images} />
+          <HomePage />
         </Route>
         <Route path="/shop">
-          <ShopPage images={images} />
+          <ShopPage />
         </Route>
         <Route path="/about-us">
           <AboutPage />
@@ -49,7 +27,7 @@ function App() {
           <Contact />
         </Route>
         <Route path="/checkout">
-          <CheckoutPage images={images} />
+          <CheckoutPage />
         </Route>
       </main>
       <div className="footer-wrap">
