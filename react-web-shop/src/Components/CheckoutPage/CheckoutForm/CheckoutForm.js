@@ -1,31 +1,186 @@
 import "./CheckoutForm.css";
-import { useParams } from "react-router-dom";
+import useInput from "../Hooks/use-input";
 
 import Tag from "../Tag";
 
 const CheckoutForm = () => {
+  const {
+    value: enteredName,
+    hasError: nameInputHasError,
+    isValid: enteredNameIsValid,
+    inputBlurHandler: nameInputBlurHandler,
+    valueChangeHandler: nameChangeHandler,
+    reset: resetNameInput,
+  } = useInput((value) => value.trim() !== "");
+
+  const {
+    value: enteredLastName,
+    hasError: lastNameInputHasError,
+    isValid: enteredLastNameIsValid,
+    inputBlurHandler: lastNameBlurHandler,
+    valueChangeHandler: lastNameChangeHandler,
+    reset: resetLastNameInput,
+  } = useInput((value) => value.trim() !== "");
+
+  const {
+    value: enteredEmail,
+    hasError: enteredEmailHasError,
+    isValid: enteredEmailIsValid,
+    inputBlurHandler: enteredEmailBlurHandler,
+    valueChangeHandler: enteredEmailChangeHandler,
+    reset: resetEnteredEmail,
+  } = useInput((value) => value.includes("@"));
+
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "+"];
+  const {
+    value: enteredNumber,
+    hasError: enteredNumberHasError,
+    isValid: enteredNumberIsValid,
+    inputBlurHandler: enteredNumberBlurHandler,
+    valueChangeHandler: enteredNumberChangeHandler,
+    reset: resetNumber,
+  } = useInput((value) => value.includes(numbers));
+
+  const {
+    value: streetAdress,
+    hasError: streetAdressHasError,
+    isValid: streetAdressIsValid,
+    inputBlurHandler: streetAdressBlurHandler,
+    valueChangeHandler: streetAdressChangeHandler,
+    reset: resetStreetAdress,
+  } = useInput((value) => value.trim() !== "");
+
+  const {
+    value: adress,
+    hasError: adressHasError,
+    isValid: adressIsValid,
+    inputBlurHandler: adressBlurHandler,
+    valueChangeHandler: adressChangeHandler,
+    reset: resetAdress,
+  } = useInput((value) => value.trim() !== "");
+  const {
+    value: city,
+    hasError: cityHasError,
+    isValid: cityIsValid,
+    inputBlurHandler: cityBlurHandler,
+    valueChangeHandler: cityChangeHandler,
+    reset: resetCity,
+  } = useInput((value) => value.trim() !== "");
+
+  const {
+    value: state,
+    hasError: stateHasError,
+    isValid: stateIsValid,
+    inputBlurHandler: stateBlurHandler,
+    valueChangeHandler: stateChangeHandler,
+    reset: resetState,
+  } = useInput((value) => value.trim() !== "");
+
+  const {
+    value: enteredZipCode,
+    hasError: enteredZipCodeHasError,
+    isValid: zipCodeIsValid,
+    inputBlurHandler: enteredZipCodeBlurHandler,
+    valueChangeHandler: enteredZipCodeChangeHandler,
+    reset: resetZipCode,
+  } = useInput((value) => value.includes(numbers));
+
+  let formIsValid = false;
+
+  if (
+    enteredNameIsValid &&
+    enteredLastNameIsValid &&
+    enteredEmailIsValid &&
+    enteredNumberIsValid &&
+    streetAdressIsValid &&
+    adressIsValid &&
+    cityIsValid &&
+    zipCodeIsValid &&
+    stateIsValid
+  ) {
+    formIsValid = true;
+  }
+
+  const formSubmisionHandler = (event) => {
+    event.preventDefault();
+
+    if (nameInputHasError) {
+      return;
+    } else {
+      console.log(enteredName);
+    }
+
+    resetNameInput();
+    resetLastNameInput();
+    resetEnteredEmail();
+    resetNumber();
+    resetStreetAdress();
+    resetAdress();
+    resetZipCode();
+    resetCity();
+    resetState();
+  };
+
   return (
     <div className="f-container">
       <Tag tag={`2`} />
       <h1 className="f-title">Checkout Info</h1>
-      <form className="f">
+      <form onSubmit={formSubmisionHandler} className="f">
         <div className="left-f-control">
           <div className="form-inputs-container">
             <div className="form-inputs">
               <label>First name</label>
-              <input type="text" className="in" />
+              <input
+                value={enteredName}
+                onChange={nameChangeHandler}
+                onBlur={nameInputBlurHandler}
+                type="text"
+                className="in"
+              />
+              {nameInputHasError && (
+                <p className="error-text">*Required field*</p>
+              )}
             </div>
             <div className="form-inputs">
               <label>Last name</label>
-              <input type="text" className="in" />
+              <input
+                value={enteredLastName}
+                onChange={lastNameChangeHandler}
+                onBlur={lastNameBlurHandler}
+                type="text"
+                className="in"
+              />
+              {lastNameInputHasError && (
+                <p className="error-text">*Required field*</p>
+              )}
             </div>
             <div className="form-inputs">
               <label>Phone</label>
-              <input type="number" className="in" />
+              <input
+                value={enteredNumber}
+                onChange={enteredNumberChangeHandler}
+                onBlur={enteredNumberBlurHandler}
+                type="number"
+                className="in"
+              />
+              {enteredNumberHasError && (
+                <p className="error-text">Must have '+' *Required field*</p>
+              )}
             </div>
             <div className="form-inputs">
               <label>Email Adress</label>
-              <input type="email" className="in" />
+              <input
+                value={enteredEmail}
+                onChange={enteredEmailChangeHandler}
+                onBlur={enteredEmailBlurHandler}
+                type="email"
+                className="in"
+              />
+              {enteredEmailHasError && (
+                <p className="error-text">
+                  Email must have "@", *Required field*
+                </p>
+              )}
             </div>
           </div>
         </div>
@@ -33,25 +188,66 @@ const CheckoutForm = () => {
           <div className="form-inputs-container">
             <div className="form-inputs">
               <label>Street Adress</label>
-              <input type="text" className="in" />
+              <input
+                value={streetAdress}
+                onChange={streetAdressChangeHandler}
+                onBlur={streetAdressBlurHandler}
+                type="text"
+                className="in"
+              />
+              {streetAdressHasError && (
+                <p className="error-text">*Required field*</p>
+              )}
             </div>
             <div className="form-inputs">
               <label>Apt, suite, etc(optional)</label>
-              <input type="text" className="in" />
+              <input
+                type="text"
+                value={adress}
+                onChange={adressChangeHandler}
+                onBlur={adressBlurHandler}
+                className="in"
+              />
+              {adressHasError && <p className="error-text">*Required field*</p>}
             </div>
             <div className="form-inputs">
               <label>City</label>
-              <input type="text" className="in" />
+              <input
+                value={city}
+                onChange={cityChangeHandler}
+                onBlur={cityBlurHandler}
+                type="text"
+                className="in"
+              />
+              {cityHasError && <p className="error-text">*Required field*</p>}
             </div>
             <div className="form-inputs">
               <div className="form-two">
                 <div className="form-flex">
                   <label>State</label>
-                  <input type="text" className="in" />
+                  <input
+                    value={state}
+                    onChange={stateChangeHandler}
+                    onBlur={stateBlurHandler}
+                    type="text"
+                    className="in"
+                  />
+                  {stateHasError && (
+                    <p className="error-text">*Required field*</p>
+                  )}
                 </div>
                 <div className="form-flex">
                   <label>Zip code</label>
-                  <input type="number" className="in" />
+                  <input
+                    type="number"
+                    value={enteredZipCode}
+                    onChange={enteredZipCodeChangeHandler}
+                    onBlur={enteredZipCodeBlurHandler}
+                    className="in"
+                  />
+                  {enteredZipCodeHasError && (
+                    <p className="error-text">*Required field*</p>
+                  )}
                 </div>
               </div>
             </div>
@@ -59,7 +255,9 @@ const CheckoutForm = () => {
         </div>
       </form>
       <div className="btn-control-container">
-        <button className="btn-control"> Continue</button>
+        <button className="btn-control" onClick={formSubmisionHandler}>
+          Continue
+        </button>
       </div>
     </div>
   );
