@@ -37,10 +37,16 @@
   display: flex;
   flex-direction: column;
 }
+
 .form-inputs-container .form-inputs .in {
   width: 90%;
   height: 50px;
   border-radius: 5px;
+  background-color: #fff;
+}
+.form-inputs .in.invalid {
+  background-color: rgb(233, 184, 184);
+  border: 2px solid red;
 }
 .right-f-control {
   display: flex;

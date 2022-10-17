@@ -121,6 +121,16 @@ const CheckoutForm = () => {
     resetState();
   };
 
+  const nameInputClasses = nameInputHasError ? "in invalid" : "in";
+  const lastNameInputClasses = lastNameInputHasError ? "in invalid" : "in";
+  const emailInputClasses = enteredEmailHasError ? "in invalid" : "in";
+  const numberInputClasses = enteredNumberHasError ? "in invalid" : "in";
+  const sAInputClasses = streetAdressHasError ? "in invalid" : "in";
+  const adressInputClasses = adressHasError ? "in invalid" : "in";
+  const zipCodeInputClasses = enteredZipCodeHasError ? "in invalid" : "in";
+  const cityInputClasses = cityHasError ? "in invalid" : "in";
+  const stateInputClasses = stateHasError ? "in invalid" : "in";
+
   return (
     <div className="f-container">
       <Tag tag={`2`} />
@@ -135,7 +145,7 @@ const CheckoutForm = () => {
                 onChange={nameChangeHandler}
                 onBlur={nameInputBlurHandler}
                 type="text"
-                className="in"
+                className={nameInputClasses}
               />
               {nameInputHasError && (
                 <p className="error-text">*Required field*</p>
@@ -148,7 +158,7 @@ const CheckoutForm = () => {
                 onChange={lastNameChangeHandler}
                 onBlur={lastNameBlurHandler}
                 type="text"
-                className="in"
+                className={lastNameInputClasses}
               />
               {lastNameInputHasError && (
                 <p className="error-text">*Required field*</p>
@@ -161,7 +171,7 @@ const CheckoutForm = () => {
                 onChange={enteredNumberChangeHandler}
                 onBlur={enteredNumberBlurHandler}
                 type="number"
-                className="in"
+                className={numberInputClasses}
               />
               {enteredNumberHasError && (
                 <p className="error-text">Must have '+' *Required field*</p>
@@ -174,7 +184,7 @@ const CheckoutForm = () => {
                 onChange={enteredEmailChangeHandler}
                 onBlur={enteredEmailBlurHandler}
                 type="email"
-                className="in"
+                className={emailInputClasses}
               />
               {enteredEmailHasError && (
                 <p className="error-text">
@@ -193,7 +203,7 @@ const CheckoutForm = () => {
                 onChange={streetAdressChangeHandler}
                 onBlur={streetAdressBlurHandler}
                 type="text"
-                className="in"
+                className={sAInputClasses}
               />
               {streetAdressHasError && (
                 <p className="error-text">*Required field*</p>
@@ -206,7 +216,7 @@ const CheckoutForm = () => {
                 value={adress}
                 onChange={adressChangeHandler}
                 onBlur={adressBlurHandler}
-                className="in"
+                className={adressInputClasses}
               />
               {adressHasError && <p className="error-text">*Required field*</p>}
             </div>
@@ -217,7 +227,7 @@ const CheckoutForm = () => {
                 onChange={cityChangeHandler}
                 onBlur={cityBlurHandler}
                 type="text"
-                className="in"
+                className={cityInputClasses}
               />
               {cityHasError && <p className="error-text">*Required field*</p>}
             </div>
@@ -230,7 +240,7 @@ const CheckoutForm = () => {
                     onChange={stateChangeHandler}
                     onBlur={stateBlurHandler}
                     type="text"
-                    className="in"
+                    className={stateInputClasses}
                   />
                   {stateHasError && (
                     <p className="error-text">*Required field*</p>
@@ -243,7 +253,7 @@ const CheckoutForm = () => {
                     value={enteredZipCode}
                     onChange={enteredZipCodeChangeHandler}
                     onBlur={enteredZipCodeBlurHandler}
-                    className="in"
+                    className={zipCodeInputClasses}
                   />
                   {enteredZipCodeHasError && (
                     <p className="error-text">*Required field*</p>

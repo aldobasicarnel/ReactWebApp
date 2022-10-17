@@ -1,100 +1,102 @@
-import { useState } from "react";
+import useInput from "../../CheckoutPage/Hooks/use-input";
 import "./ContactForm.css";
 
 const ContactForm = () => {
-  const [enteredName, setEnteredName] = useState("");
-  const [enteredEmail, setEnteredEmail] = useState("");
-  const [enteredMessage, setEnteredMessage] = useState("");
-  const [isValid, setIsValid] = useState(false);
-  const [isTouched, setIsTouched] = useState(false);
+  const {
+    value: name,
+    isValid: nameIsValid,
+    hasError: nameHasError,
+    valueChangeHandler: nameChangeHandler,
+    inputBlurHandler: nameBlurHandler,
+    reset: nameReset,
+  } = useInput((value) => value.trim() !== "");
 
-  const nameInputChangeHandler = (event) => {
-    setEnteredName(event.target.value);
-  };
+  const {
+    value: enteredEmail,
+    isValid: enteredEmailIsValid,
+    hasError: enteredEmailHasError,
+    valueChangeHandler: enteredEmailChangeHandler,
+    inputBlurHandler: enteredEmailBlurHandler,
+    reset: enteredEmailReset,
+  } = useInput((value) => value.includes("@"));
 
-  const emailInputChangeHandler = (event) => {
-    setEnteredEmail(event.target.value);
-  };
+  const {
+    value: enteredMessage,
+    isValid: enteredMessageIsValid,
+    hasError: enteredMessageHasError,
+    valueChangeHandler: enteredMessageChangeHandler,
+    inputBlurHandler: enteredMessageBlurHandler,
+    reset: enteredMessageReset,
+  } = useInput((value) => value.trim() !== "");
 
-  const messageInputChangeHandler = (event) => {
-    setEnteredMessage(event.target.value);
-  };
+  let formIsValid = false;
 
-  const inputBlurHandler = () => {
-    setIsTouched(true);
-    if (
-      enteredName.trim() === "" &&
-      enteredEmail.trim() === "" &&
-      enteredMessage.trim() === ""
-    ) {
-      setIsValid(false);
-      return;
-    }
-  };
+  if (nameIsValid && enteredEmailIsValid && enteredMessageIsValid) {
+    formIsValid = true;
+  }
 
   const formSubmissionHandler = (event) => {
     event.preventDefault();
 
-    setIsTouched(true);
-
-    if (
-      enteredName.trim() === "" &&
-      enteredEmail.trim() === "" &&
-      enteredMessage.trim() === ""
-    ) {
-      setIsValid(false);
+    if (nameHasError) {
       return;
     }
 
-    setIsValid(true);
-
-    console.log(enteredName);
+    console.log(name);
     console.log(enteredEmail);
     console.log(enteredMessage);
 
-    setEnteredName("");
-    setEnteredEmail("");
-    setEnteredMessage("");
+    nameReset();
+    enteredEmailReset();
+    enteredMessageReset();
   };
 
-  const inputIsInvalid = !isValid && isTouched;
+  const nameInputClasses = nameHasError ? "f-in invalid" : "f-in ";
 
-  const InputClasses = inputIsInvalid ? "form-control invalid" : "form-control";
+  const emailInputClasses = enteredEmailHasError ? "f-in invalid" : "f-in ";
+
+  const messageInputClasses = enteredMessageHasError ? "f-in invalid" : "f-in ";
 
   return (
     <form onSubmit={formSubmissionHandler}>
-      <div className={InputClasses}>
+      <div className="form-control">
         <label>Name</label>
         <input
           type="text"
           id="name"
-          valiue={enteredName}
-          onChange={nameInputChangeHandler}
-          onBlur={inputBlurHandler}
+          value={name}
+          className={nameInputClasses}
+          onChange={nameChangeHandler}
+          onBlur={nameBlurHandler}
         />
-        {inputIsInvalid && <p className="error-text">Name must be not empty</p>}
+        {nameHasError && <p className="error-text">Name must be not empty</p>}
       </div>
-      <div className={InputClasses}>
+      <div className="form-control">
         <label>E-Mail</label>
         <input
           type="email"
           id="email"
+          className={emailInputClasses}
           value={enteredEmail}
-          onChange={emailInputChangeHandler}
-          onBlur={inputBlurHandler}
+          onChange={enteredEmailChangeHandler}
+          onBlur={enteredEmailBlurHandler}
         />
-        {inputIsInvalid && (
-          <p className="error-text">Email must be not empty</p>
+        {enteredEmailHasError && (
+          <p className="error-text">Email& must have '@'</p>
         )}
       </div>
-      <div className={InputClasses}>
+      <div className="form-control">
         <label>Message</label>
         <textarea
           value={enteredMessage}
-          onChange={messageInputChangeHandler}
-          onBlur={inputBlurHandler}
+          className={messageInputClasses}
+          onChange={enteredMessageChangeHandler}
+          onBlur={enteredMessageBlurHandler}
           id="message"
         />
+        {enteredMessageHasError && (
+          <p className="error-text">Message must be not empty</p>
+        )}
       </div>
       <div className="form-actions">
         <button>Submit</button>
