@@ -113,6 +113,7 @@
 .shipping-info {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   display: flex;
+  justify-content: space-between;
   gap: 9.8rem;
 }
 .shipping {

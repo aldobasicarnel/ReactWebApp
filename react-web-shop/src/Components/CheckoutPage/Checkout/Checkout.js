@@ -48,7 +48,7 @@ const Checkout = (props) => {
           <div className="order-info">
             <div className="price-info">
               <p className="price">Subtotal:</p>{" "}
-              <p className="price">${amount}</p>
+              <p className="price">${amount.toFixed(2)}</p>
             </div>
             <div className="shipping-info">
               <p className="shipping">Shipping:</p>
@@ -56,7 +56,7 @@ const Checkout = (props) => {
             </div>
             <div className="total-amount">
               <p className="amount">Grand Total:</p>
-              <p className="amount">${grandTotal}</p>
+              <p className="amount">${grandTotal.toFixed(2)}</p>
             </div>
           </div>
 

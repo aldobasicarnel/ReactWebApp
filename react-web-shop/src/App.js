@@ -5,20 +5,30 @@ import NavBar from "./Components/HomePage/NavBar/NavBar";
 import Footer from "./Components/HomePage/Footer/Footer";
 import { Route } from "react-router-dom";
 
+import { useState, useEffect } from "react";
+
 import AboutPage from "./Components/AboutPage/AboutPage";
 import Contact from "./Components/ContactPage/Contact";
 import CheckoutPage from "./Components/CheckoutPage/CheckoutPage";
 
 function App() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("https://dummyjson.com/products")
+      .then((response) => response.json())
+      .then((data) => setProducts(data.products));
+  }, []);
+
   return (
     <div className="app">
       <NavBar />
       <main>
         <Route path="/" exact>
-          <HomePage />
+          <HomePage products={products} />
         </Route>
         <Route path="/shop">
-          <ShopPage />
+          <ShopPage products={products} />
         </Route>
         <Route path="/about-us">
           <AboutPage />
