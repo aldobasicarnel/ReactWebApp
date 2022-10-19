@@ -3,6 +3,7 @@ import HomePage from "./Components/HomePage/HomePage";
 import ShopPage from "./Components/ShopPage/ShopPage";
 import NavBar from "./Components/HomePage/NavBar/NavBar";
 import Footer from "./Components/HomePage/Footer/Footer";
+import ProductDetail from "./Components/HomePage/FeaturedProducts/ProductDetail";
 import { Route } from "react-router-dom";
 
 import { useState, useEffect } from "react";
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route path="/shop">
           <ShopPage products={products} />
+        </Route>
+        <Route path="/products/:productId">
+          <ProductDetail products={products} />
         </Route>
         <Route path="/about-us">
           <AboutPage />

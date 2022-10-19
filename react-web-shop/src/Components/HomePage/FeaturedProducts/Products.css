@@ -30,7 +30,10 @@
   max-width: 150px;
   text-transform: uppercase;
 }
-
+.product-link {
+  text-decoration: none;
+  color: var(--secondary-list-color);
+}
 .description span {
   position: absolute;
   top: 5px;
