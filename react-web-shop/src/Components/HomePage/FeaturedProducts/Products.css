@@ -51,7 +51,7 @@
   color: var(--secondary-list-color);
   bottom: 12px;
   right: 10px;
-  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 .description .product-btn:hover {
