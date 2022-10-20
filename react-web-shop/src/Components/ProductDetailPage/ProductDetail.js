@@ -19,7 +19,7 @@ const ProductDetail = ({ products }) => {
         <ProductDetailItem
           products={{
             id: product.id,
-            thumbnail: product.thumbnail,
+            images: product.images,
             title: product.title,
             description: product.description,
             price: product.price,

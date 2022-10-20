@@ -8,7 +8,7 @@ const ProductDetailItem = (props) => {
   const {
     id,
     title,
-    thumbnail,
+    images,
     brand,
     category,
     description,
@@ -24,7 +24,7 @@ const ProductDetailItem = (props) => {
     dispatch(
       cartActions.addItemToCart({
         id,
-        img: thumbnail,
+        img: images,
         name: title,
         price,
         quantity,
@@ -34,8 +34,9 @@ const ProductDetailItem = (props) => {
 
   return (
     <div className="detail-container">
+      {" "}
       <div className="detail-image" key={id}>
-        <img className="d-img" alt="" src={thumbnail} />
+        <img className="d-img" alt="" src={images[0]} />
       </div>
       <div className="details">
         <div className="detail-info">
@@ -51,7 +52,7 @@ const ProductDetailItem = (props) => {
             <div className="price-desc">
               <span className="d-price">${price}</span>
               <span className="d-price">{stockValue}</span>
-              <span className="d-price">Rating {rating}</span>
+              <span className="d-price">⭐️{rating}</span>
             </div>
           </div>
         </div>

@@ -28,7 +28,6 @@ button {
   border: none;
   z-index: 999;
   background-color: transparent;
-  font-size: 25px;
   cursor: pointer;
 }
 button:focus {

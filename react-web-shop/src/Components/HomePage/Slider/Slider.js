@@ -37,7 +37,7 @@ const Slider = () => {
           }`}
         >
           {images.map((item) => (
-            <img key={item.id} src={item.img} alt="" />
+            <img className="slider-img" key={item.id} src={item.img} alt="" />
           ))}
         </div>
         <div className="button-container">

@@ -17,11 +17,10 @@
 .image-container.increase {
   transform: translateX(-780px);
 }
-img {
+.slider-img {
   height: 390px;
-  width: 100%;
-  min-width: 390px;
-  object-fit: cover;
+  width: 420px;
+  min-width: 400px;
 }
 .button-container {
   position: absolute;
@@ -75,10 +74,9 @@ img {
     transition: transform 0.5s ease-in-out;
   }
 
-  img {
+  .slider-img {
     height: 500px;
     width: 100%;
-    min-width: 390px;
     object-fit: cover;
   }
   .image-container.active {

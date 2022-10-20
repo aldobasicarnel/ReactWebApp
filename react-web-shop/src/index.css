@@ -12,3 +12,7 @@
   font-family: Poppins, sans-serif;
   box-sizing: border-box;
 }
+
+img {
+  object-fit: cover;
+}
