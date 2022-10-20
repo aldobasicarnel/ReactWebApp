@@ -1,0 +1,51 @@
+.detail-container {
+  width: 100%;
+  min-width: 350px;
+  max-width: 1000px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+}
+.detail-image {
+  width: 60%;
+  background-color: transparent;
+}
+.detail-image .d-img {
+  width: 100%;
+  height: 80%;
+}
+.detail-info {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+}
+.details-title {
+  text-align: center;
+  margin: 20px 30px;
+}
+.d-title {
+  text-align: center;
+  font-size: 40px;
+}
+.title-desc {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-transform: uppercase;
+  gap: 0.4rem;
+  font-size: 13px;
+}
+.details-price {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.price-desc {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}

@@ -3,8 +3,10 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../../Store/Cart-Slice";
 import { Link } from "react-router-dom";
 
-const Products = ({ id, thumbnail, title, quantity, price }) => {
+const Products = (props) => {
   const dispatch = useDispatch();
+
+  const { id, thumbnail, title, quantity, price } = props.item;
 
   const addToCartHandler = () => {
     dispatch(

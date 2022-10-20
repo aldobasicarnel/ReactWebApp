@@ -3,7 +3,7 @@ import HomePage from "./Components/HomePage/HomePage";
 import ShopPage from "./Components/ShopPage/ShopPage";
 import NavBar from "./Components/HomePage/NavBar/NavBar";
 import Footer from "./Components/HomePage/Footer/Footer";
-import ProductDetail from "./Components/HomePage/FeaturedProducts/ProductDetail";
+import ProductDetail from "./Components/ProductDetailPage/ProductDetail";
 import { Route } from "react-router-dom";
 
 import { useState, useEffect } from "react";

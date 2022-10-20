@@ -7,11 +7,13 @@ const FeaturedProducts = ({ products }) => {
       {products.map((item) => (
         <Products
           key={item.id}
-          id={item.id}
-          thumbnail={item.thumbnail}
-          title={item.title}
-          price={item.price}
-          quantity={item.quantity}
+          item={{
+            id: item.id,
+            thumbnail: item.thumbnail,
+            title: item.title,
+            price: item.price,
+            quantity: item.quantity,
+          }}
         />
       ))}
     </div>
