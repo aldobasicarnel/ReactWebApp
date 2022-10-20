@@ -99,7 +99,7 @@ const ContactForm = () => {
         )}
       </div>
       <div className="form-actions">
-        <button>Submit</button>
+        <button className="form-btn">Submit</button>
       </div>
     </form>
   );
