@@ -155,6 +155,8 @@
   .detail-container {
     max-width: 400px;
     flex-direction: column;
+    min-height: 650px;
+    max-height: 950px;
   }
 
   .image-s-c {
@@ -170,7 +172,19 @@
   }
   .detail-image .d-img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    max-height: 490px;
+    min-width: 400px;
+  }
+
+  .detail-image.one {
+    transform: translateX(-400px);
+  }
+  .detail-image.two {
+    transform: translateX(-800px);
+  }
+  .detail-image.three {
+    transform: translateX(-1200px);
   }
   .details {
     display: flex;
@@ -190,5 +204,22 @@
     width: 100%;
     height: 100%;
     padding: 0;
+  }
+
+  .images-cont {
+    display: flex;
+    height: 40px;
+    width: 100%;
+    background-color: transparent;
+  }
+  .img-button {
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 5px;
+  }
+  .img-button:hover {
+    opacity: 1;
   }
 } ;
