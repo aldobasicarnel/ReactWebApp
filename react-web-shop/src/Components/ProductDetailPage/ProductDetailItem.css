@@ -21,13 +21,19 @@
 .detail-image {
   display: flex;
   background-color: transparent;
-  height: 75%;
+  height: 90%;
   min-width: 540px;
   transform: translateX(0);
   transition: transform 0.5s ease-in;
 }
 .detail-image.one {
   transform: translateX(-100%);
+}
+.detail-image.two {
+  transform: translateX(-200%);
+}
+.detail-image.three {
+  transform: translateX(-300%);
 }
 
 .detail-image .d-img {
@@ -38,20 +44,31 @@
 }
 .images-cont {
   display: flex;
-  height: 20%;
+  height: 10%;
   width: 100%;
   background-color: transparent;
 }
 .img-button {
   height: 100%;
-  width: 25%;
+  width: 50%;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 5px;
 }
 .img-button:hover {
   opacity: 0.5;
 }
-.c-img {
-  height: 100%;
-  width: 100%;
+.bi-arrow-left {
+  background-color: transparent;
+  height: 50%;
+  width: 50%;
+  opacity: 0.8;
+}
+.bi-arrow-right {
+  background-color: transparent;
+  height: 50%;
+  width: 50%;
+  opacity: 0.8;
 }
 .details {
   width: 45%;

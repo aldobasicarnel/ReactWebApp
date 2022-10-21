@@ -4,7 +4,9 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../Store/Cart-Slice";
 
 const ProductDetailItem = (props) => {
-  const [moveImage, setMoveImage] = useState(false);
+  const [moveImageOne, setMoveImageOne] = useState(false);
+  const [moveImageTwo, setMoveImageTwo] = useState(false);
+  const [moveImageThree, setMoveImageThree] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -35,29 +37,90 @@ const ProductDetailItem = (props) => {
     );
   };
 
-  const btnLists = ["first", "second", "third", "fourth"];
+  const arrowNextHandler = () => {
+    if (!moveImageOne) {
+      setMoveImageOne(!moveImageOne);
+      setMoveImageTwo(false);
+      setMoveImageThree(false);
+    } else if (!moveImageTwo) {
+      setMoveImageOne(moveImageOne);
+      setMoveImageTwo(!moveImageTwo);
+      setMoveImageThree(moveImageThree);
+    } else if (!moveImageThree) {
+      setMoveImageOne(moveImageOne);
+      setMoveImageTwo(moveImageTwo);
+      setMoveImageThree(!moveImageThree);
+    } else {
+      setMoveImageOne(false);
+      setMoveImageTwo(false);
+      setMoveImageThree(false);
+    }
+  };
 
-  const btn = btnLists.map((btn) => btn);
-
-  const imageOneHandler = () => {
-    setMoveImage(!moveImage);
+  const arrowBackHandler = () => {
+    if (!moveImageOne) {
+      setMoveImageOne(moveImageOne);
+      setMoveImageTwo(false);
+      setMoveImageThree(false);
+    } else if (!moveImageTwo) {
+      setMoveImageOne(!moveImageOne);
+      setMoveImageTwo(moveImageTwo);
+      setMoveImageThree(moveImageThree);
+    } else if (!moveImageThree) {
+      setMoveImageOne(moveImageOne);
+      setMoveImageTwo(!moveImageTwo);
+      setMoveImageThree(moveImageThree);
+    } else {
+      setMoveImageOne(false);
+      setMoveImageTwo(false);
+      setMoveImageThree(false);
+    }
   };
 
   return (
     <div className="detail-container">
-      {" "}
       <div className="image-s-c">
-        <div className={`detail-image ${moveImage ? "one" : ""}`} key={id}>
+        <div
+          className={`detail-image ${moveImageOne ? "one" : ""} ${
+            moveImageTwo ? "two" : ""
+          } ${moveImageThree ? "three" : ""}`}
+          key={id}
+        >
           {images.map((img) => (
             <img className="d-img" alt="" src={img} />
           ))}
         </div>
         <div className="images-cont">
-          {images.map((image) => (
-            <button onClick={imageOneHandler} className={btn}>
-              <img className="c-img" alt="" src={image} />
-            </button>
-          ))}
+          <button onClick={arrowBackHandler} className="img-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              fill="currentColor"
+              className="bi bi-arrow-left"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+              />
+            </svg>
+          </button>
+          <button onClick={arrowNextHandler} className="img-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              fill="currentColor"
+              className="bi bi-arrow-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+              />
+            </svg>
+          </button>
         </div>
       </div>
       <div className="details">
