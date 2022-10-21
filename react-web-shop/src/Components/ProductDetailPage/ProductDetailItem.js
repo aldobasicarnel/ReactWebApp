@@ -1,8 +1,11 @@
 import "./ProductDetailItem.css";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../Store/Cart-Slice";
 
 const ProductDetailItem = (props) => {
+  const [moveImage, setMoveImage] = useState(false);
+
   const dispatch = useDispatch();
 
   const {
@@ -32,11 +35,30 @@ const ProductDetailItem = (props) => {
     );
   };
 
+  const btnLists = ["first", "second", "third", "fourth"];
+
+  const btn = btnLists.map((btn) => btn);
+
+  const imageOneHandler = () => {
+    setMoveImage(!moveImage);
+  };
+
   return (
     <div className="detail-container">
       {" "}
-      <div className="detail-image" key={id}>
-        <img className="d-img" alt="" src={images[0]} />
+      <div className="image-s-c">
+        <div className={`detail-image ${moveImage ? "one" : ""}`} key={id}>
+          {images.map((img) => (
+            <img className="d-img" alt="" src={img} />
+          ))}
+        </div>
+        <div className="images-cont">
+          {images.map((image) => (
+            <button onClick={imageOneHandler} className={btn}>
+              <img className="c-img" alt="" src={image} />
+            </button>
+          ))}
+        </div>
       </div>
       <div className="details">
         <div className="detail-info">
