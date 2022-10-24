@@ -1,4 +1,4 @@
-nav {
+.nav {
   width: 100%;
   height: 55px;
   background-color: var(--primary-color);
@@ -47,14 +47,14 @@ button:focus {
   background-color: transparent;
   z-index: -1;
 }
-nav .navbar-list {
+.nav .navbar-list {
   opacity: 0;
   transition: opacity 0.4s ease-in;
   height: 0;
   overflow: hidden;
 }
 
-nav .navbar-list.active {
+.nav .navbar-list.active {
   opacity: 1;
   height: auto;
 }
@@ -128,9 +128,23 @@ nav .navbar-list.active {
   margin: 2px;
   text-align: center;
 }
+.overlay {
+  overflow: hidden;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: auto;
+}
+.overlay .hidden {
+  opacity: 1;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
 
 @media (min-width: 768px) {
-  nav {
+  .nav {
     position: relative;
     display: flex;
     top: 0;
@@ -144,7 +158,7 @@ nav .navbar-list.active {
     flex-direction: column;
   }
 
-  nav .title {
+  .nav .title {
     position: absolute;
     top: 10px;
     left: 15px;
@@ -162,21 +176,21 @@ nav .navbar-list.active {
   .close-nav svg {
     display: none;
   }
-  nav .navbar-list {
+  .nav .navbar-list {
     opacity: 1;
     align-items: center;
     height: 50px;
     display: flex;
   }
-  nav .navbar-list.active {
+  .nav .navbar-list.active {
     display: none;
   }
-  nav .navbar-list ul {
+  .nav .navbar-list ul {
     display: block;
     width: 100%;
     list-style-type: none;
   }
-  nav .navbar-list ul li {
+  .nav .navbar-list ul li {
     display: inline;
     float: left;
     font-size: 20px;
@@ -187,7 +201,7 @@ nav .navbar-list.active {
     margin-bottom: 0;
     width: auto;
   }
-  nav .navbar-list ul li a {
+  .nav .navbar-list ul li a {
     color: var(--secondary-list-color);
     text-decoration: none;
     font-size: 20px;
@@ -195,22 +209,22 @@ nav .navbar-list.active {
     display: block;
   }
 
-  nav .navbar-list ul li a:hover {
+  .nav .navbar-list ul li a:hover {
     background-color: var(--secondary-list-color);
     color: #fff;
   }
 
-  nav .navbar-list ul li a:active {
+  .nav .navbar-list ul li a:active {
     background-color: var(--seconadry-color);
     color: #fff;
   }
-  nav .navbar-list ul li ul {
+  .nav .navbar-list ul li ul {
     position: absolute;
     width: 100px;
     left: 0;
     background-color: var(--secondary-list-color);
   }
-  nav .navbar-list .drop-menu {
+  .nav .navbar-list .drop-menu {
     opacity: 0;
     transition: opacity 0.2s ease-in;
     height: 0;
@@ -221,14 +235,14 @@ nav .navbar-list.active {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
     z-index: 1;
   }
-  nav .navbar-list .drop-menu a {
+  .nav .navbar-list .drop-menu a {
     color: black;
     padding: 15px 20px;
     text-decoration: none;
     opacity: 1;
     height: auto;
   }
-  nav .navbar-list .drop-btn a:hover {
+  .nav .navbar-list .drop-btn a:hover {
     background-color: var(--secondary-list-color);
   }
 
