@@ -3,7 +3,7 @@ import ContactForm from "./ContactForm/ContactForm";
 import "./Contact.css";
 const ContactPage = () => {
   return (
-    <div>
+    <div className="f-cont">
       <ShopTitle title={`Contact`} />
       <div>
         <h3 className="form-title">Contact Us</h3>

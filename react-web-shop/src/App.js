@@ -14,12 +14,21 @@ import CheckoutPage from "./Components/CheckoutPage/CheckoutPage";
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     fetch("https://dummyjson.com/products")
       .then((response) => response.json())
-      .then((data) => setProducts(data.products));
+      .then((data) => {
+        setIsLoading(false);
+        setProducts(data.products);
+      });
   }, []);
+
+  if (isLoading) {
+    return <p className="title">Loading...</p>;
+  }
 
   return (
     <div className="app">
