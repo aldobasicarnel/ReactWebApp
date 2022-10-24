@@ -41,9 +41,9 @@
   position: relative;
 }
 .info-img {
-  width: 100px;
-  min-width: 50px;
-  height: 100px;
+  width: 20%;
+  height: 150px;
+  object-fit: scale-down;
 }
 .desc-info {
   text-align: center;
@@ -167,10 +167,11 @@
   }
   .product-info {
     width: 100%;
-    height: 150px;
+    height: 100%;
     display: flex;
-    flex-direction: row;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    flex-direction: row;
+    justify-content: space-between;
   }
   .delete-btn {
     height: 20px;
@@ -180,40 +181,52 @@
     z-index: 1;
   }
   .info-img {
-    width: 100px;
-    min-width: 50px;
-    height: 130px;
+    width: 20%;
+    height: 150px;
   }
   .desc-info {
+    display: flex;
     text-align: center;
     border-radius: 0;
-    width: auto;
-    height: auto;
-    min-width: none;
+    width: 100%;
+    height: 100%;
     flex-direction: column;
-    margin-left: 50px;
     margin-left: 0;
     box-shadow: none;
+    align-items: center;
+    padding: 10px;
   }
   .quantity {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    width: 50px;
-    height: 25px;
+    display: flex;
+    position: static;
+    width: 55px;
+    height: 15%;
     border-radius: 5px;
-    box-shadow: 2px 1px 2px 1px rgba(94, 94, 94, 0.2);
+    box-shadow: 2px 2px 2px 2px rgb(94 94 94 / 20%);
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
   }
   .desc-quan {
+    width: 40px;
     background-color: transparent;
   }
   .desc-name {
     flex-direction: row;
-    margin-left: 20px;
-    margin-right: 10px;
+    width: 100%;
+    height: 20%;
+    margin: 0;
+  }
+  .desc-price {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    justify-content: center;
   }
   .desc-btns {
-    margin: 0 15px;
+    height: 30%;
   }
 
   .desc-amount {

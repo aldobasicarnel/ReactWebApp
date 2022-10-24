@@ -75,9 +75,15 @@ nav .navbar-list.active {
 }
 
 .navbar-list ul {
-  margin: 5rem;
+  display: flex;
   width: 100%;
+  margin: 5rem 0;
+  padding: 0;
   list-style-type: none;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar-list ul li {
@@ -166,9 +172,9 @@ nav .navbar-list.active {
     display: none;
   }
   nav .navbar-list ul {
+    display: block;
+    width: 100%;
     list-style-type: none;
-    color: var(--secondary-list-color);
-    margin-left: 0;
   }
   nav .navbar-list ul li {
     display: inline;
