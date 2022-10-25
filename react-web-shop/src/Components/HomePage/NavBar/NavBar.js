@@ -101,7 +101,7 @@ const NavBar = () => {
 
       <div
         onClick={closeMenuHandler}
-        className={`overlay  ${!showMenu ? "" : "hidden"} `}
+        className={`overlay  ${!showMenu ? "" : "visible"} `}
       ></div>
     </div>
   );

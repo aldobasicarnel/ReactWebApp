@@ -18,6 +18,7 @@ const ProductDetail = ({ products }) => {
       <div className="product-detail">
         <ProductDetailItem
           products={{
+            key: product.id,
             id: product.id,
             images: product.images,
             title: product.title,

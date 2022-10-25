@@ -4,7 +4,7 @@
   background-color: var(--primary-color);
   box-shadow: 0px 1px 3px 1px rgb(0, 0, 0, 0.4);
   position: relative;
-  z-index: 9;
+  z-index: 10;
   justify-content: center;
 }
 .cart-nav {
@@ -129,17 +129,15 @@ button:focus {
   text-align: center;
 }
 .overlay {
-  overflow: hidden;
-  opacity: 0;
+  display: none;
   height: 100%;
   width: 100%;
   position: fixed;
+  z-index: 9;
+  background: rgba(0, 0, 0, 0.5);
 }
-.overlay .hidden {
-  opacity: 1;
-  position: fixed;
-  height: 100%;
-  width: 100%;
+.overlay.visible {
+  display: block;
 }
 
 @media (min-width: 768px) {
