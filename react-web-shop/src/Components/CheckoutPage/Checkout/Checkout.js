@@ -24,7 +24,6 @@ const Checkout = (props) => {
     <div className="flexbox-container">
       <Tag tag={`1`} />
       <div className="flexbox">
-        {" "}
         <div className="checkout-title">
           <h5>Items</h5>
           <h5>Name</h5>
@@ -52,19 +51,22 @@ const Checkout = (props) => {
             </div>
             <div className="shipping-info">
               <p className="shipping">Shipping:</p>
-              <a href="#">Add Info</a>
+              <Link to="/checkout/form">Add Info</Link>
             </div>
             <div className="total-amount">
               <p className="amount">Grand Total:</p>
               <p className="amount">${grandTotal.toFixed(2)}</p>
             </div>
           </div>
-
-          <button className="order-btn">
-            <Link to="" className="link-shiping">
-              Proceed to checkout
-            </Link>
-          </button>
+          {items.length < 1 ? (
+            <p className="empty-text">Cart is empty!</p>
+          ) : (
+            <button className="order-btn">
+              <Link to="/checkout/form" className="link-shiping">
+                Proceed to checkout
+              </Link>
+            </button>
+          )}
         </div>
       </div>
     </div>

@@ -8,7 +8,6 @@ const ShopPage = ({ products }) => {
     <div>
       <ShopTitle title={`Shop`} />
       <Sorting />
-
       <FeaturedProducts products={products} />
     </div>
   );

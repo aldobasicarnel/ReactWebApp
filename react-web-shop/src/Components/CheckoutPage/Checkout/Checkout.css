@@ -279,4 +279,12 @@
     padding: 5px 5px;
     color: #fff;
   }
+  .empty-text {
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    color: #000;
+    text-transform: uppercase;
+  }
 }
