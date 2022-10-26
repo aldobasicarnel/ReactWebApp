@@ -42,7 +42,6 @@
 }
 .info-img {
   width: 20%;
-  height: 150px;
   object-fit: scale-down;
 }
 .desc-info {
@@ -206,6 +205,7 @@
     box-shadow: none;
     align-items: center;
     padding: 10px;
+    gap: 0.5rem;
   }
   .quantity {
     display: flex;

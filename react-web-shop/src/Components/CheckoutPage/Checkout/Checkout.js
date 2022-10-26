@@ -4,7 +4,7 @@ import CheckoutItem from "./CheckoutItem";
 import { Link } from "react-router-dom";
 import Tag from "../Tag";
 
-const Checkout = (props) => {
+const Checkout = () => {
   const totalAmount = useSelector((state) => state.items);
   const items = useSelector((state) => state.items);
 
@@ -20,6 +20,18 @@ const Checkout = (props) => {
   const taxes = amount * tax;
   const grandTotal = amount + taxes;
 
+  const itemList = items.map((item) => (
+    <CheckoutItem
+      key={item.id}
+      id={item.id}
+      img={item.img}
+      title={item.name}
+      price={item.price}
+      totalPrice={item.totalPrice}
+      quantity={item.quantity}
+    />
+  ));
+
   return (
     <div className="flexbox-container">
       <Tag tag={`1`} />
@@ -30,19 +42,7 @@ const Checkout = (props) => {
           <h5>Price</h5>
           <h5>Quantity</h5>
         </div>
-        {items.map((item) => (
-          <CheckoutItem
-            key={item.id}
-            item={{
-              id: item.id,
-              img: item.img,
-              title: item.name,
-              price: item.price,
-              totalPrice: item.totalPrice,
-              quantity: item.quantity,
-            }}
-          />
-        ))}
+        {itemList}
         <div className="checkout-info">
           <div className="order-info">
             <div className="price-info">

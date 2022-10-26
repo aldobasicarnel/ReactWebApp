@@ -2,15 +2,14 @@ import "./Cart.css";
 import CartItem from "./CartItem";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Cart = ({ id, title, price, quantity }) => {
-  const dispatch = useDispatch();
-
   const location = useLocation();
 
   const [showCartList, setShowCartList] = useState(false);
   const badge = useSelector((state) => state.totalQuantity);
+
   const cartItems = useSelector((state) => state.items);
 
   const showCartHandler = () => {
